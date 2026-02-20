@@ -32,11 +32,11 @@ const Navbar = () => {
         : "bg-transparent"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-baseline leading-none group active:scale-95 transition-transform shrink-0">
           <span
-            className="text-[#34A853] text-2xl md:text-4xl tracking-widest gta-outline"
+            className="text-[#34A853] text-[1.7rem] md:text-4xl tracking-widest gta-outline"
             style={{
               fontFamily: "'Pricedown', 'Bungee', 'Impact', sans-serif",
               WebkitTextStroke: '1px #000',

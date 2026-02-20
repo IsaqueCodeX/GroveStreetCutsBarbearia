@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
 /* Self-hosted fonts for guaranteed mobile rendering */
 @font-face {
   font-family: 'Pricedown';
@@ -14,9 +17,6 @@
   font-display: swap;
   src: url('/fonts/diploma.woff') format('woff');
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
 /* Custom class for thick GTA-style text outline */
 .gta-outline {
