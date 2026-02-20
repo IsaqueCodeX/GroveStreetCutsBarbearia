@@ -37,10 +37,10 @@ const Navbar = () => {
         {/* Logo - Text Only, Optimized for Mobile */}
         <a href="#" className="flex flex-col md:flex-row md:items-end leading-none gap-1 md:gap-2 group active:scale-95 transition-transform">
           <div className="flex items-baseline">
-            <span className="font-display text-[1.75rem] md:text-3xl tracking-wide text-grove-green whitespace-nowrap" style={{ letterSpacing: "0.05em" }}>
+            <span className="font-display text-3xl md:text-4xl tracking-widest text-grove-green whitespace-nowrap">
               GROVE STREET
             </span>
-            <span className="font-accent text-xl md:text-3xl text-grove-gold ml-1.5 md:ml-0 tracking-normal">
+            <span className="font-accent text-xl md:text-3xl text-grove-gold ml-1.5 md:ml-2 tracking-normal">
               CUTS
             </span>
           </div>
