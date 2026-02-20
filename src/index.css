@@ -1,0 +1,216 @@
+@import url('https://fonts.cdnfonts.com/css/pricedown');
+@import url('https://fonts.cdnfonts.com/css/diploma');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   GROVE STREET CUTS — DESIGN SYSTEM
+   Dark Urban Premium Barbershop
+   All colors in HSL
+   ============================================ */
+
+@layer base {
+  :root {
+    /* Core Palette */
+    --background: 0 0% 7%;            /* Asphalt Black #121212 */
+    --foreground: 0 0% 95%;           /* Near White */
+
+    --card: 0 0% 10%;                 /* Slightly lighter black */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Grove Green - Primary Brand */
+    --primary: 137 60% 44%;           /* #34A853 */
+    --primary-foreground: 0 0% 7%;
+
+    /* Mission Gold - Secondary Accent */
+    --secondary: 43 96% 56%;          /* #FBBF24 */
+    --secondary-foreground: 0 0% 7%;
+
+    /* Concrete Grey */
+    --muted: 0 0% 15%;
+    --muted-foreground: 220 9% 62%;   /* #9CA3AF */
+
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 137 60% 44%;
+
+    --radius: 0.375rem;
+
+    /* Custom Design Tokens */
+    --grove-green: 137 60% 44%;
+    --mission-gold: 43 96% 56%;
+    --concrete-grey: 220 9% 62%;
+    --asphalt: 0 0% 7%;
+    --surface: 0 0% 10%;
+    --surface-elevated: 0 0% 13%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(18,18,18,0.7) 60%, rgba(18,18,18,1) 100%);
+    --gradient-green-glow: 0 0 30px hsl(137 60% 44% / 0.5);
+    --gradient-gold-glow: 0 0 30px hsl(43 96% 56% / 0.5);
+
+    /* Typography */
+    --font-display: 'Pricedown', 'Impact', sans-serif;
+    --font-accent: 'Diploma', serif;
+    --font-body: 'Poppins', sans-serif;
+
+    /* Sidebar (unused but required) */
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 137 60% 44%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 13%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 137 60% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+  }
+
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-green {
+    color: hsl(var(--grove-green));
+  }
+
+  .text-gold {
+    color: hsl(var(--mission-gold));
+  }
+
+  .text-grey {
+    color: hsl(var(--concrete-grey));
+  }
+
+  .bg-surface {
+    background-color: hsl(var(--surface));
+  }
+
+  .bg-surface-elevated {
+    background-color: hsl(var(--surface-elevated));
+  }
+
+  .border-green {
+    border-color: hsl(var(--grove-green));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--mission-gold));
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px hsl(var(--grove-green) / 0.4), 0 0 60px hsl(var(--grove-green) / 0.15);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(var(--mission-gold) / 0.4), 0 0 60px hsl(var(--mission-gold) / 0.15);
+  }
+
+  .section-title {
+    @apply font-display text-4xl md:text-6xl tracking-widest uppercase;
+    color: hsl(var(--foreground));
+  }
+
+  .section-title-line {
+    @apply block h-1 w-24 mx-auto mt-4;
+    background: linear-gradient(90deg, hsl(var(--grove-green)), hsl(var(--mission-gold)));
+  }
+
+  .btn-primary {
+    @apply font-body font-semibold uppercase tracking-widest px-8 py-3 rounded transition-all duration-300 text-sm;
+    background-color: hsl(var(--grove-green));
+    color: hsl(var(--asphalt));
+  }
+
+  .btn-primary:hover {
+    background-color: hsl(137 60% 38%);
+    box-shadow: 0 0 25px hsl(var(--grove-green) / 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-gold {
+    @apply font-body font-semibold uppercase tracking-widest px-8 py-3 rounded transition-all duration-300 text-sm;
+    background-color: hsl(var(--mission-gold));
+    color: hsl(var(--asphalt));
+  }
+
+  .btn-gold:hover {
+    background-color: hsl(43 96% 48%);
+    box-shadow: 0 0 25px hsl(var(--mission-gold) / 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-green {
+    @apply font-body font-semibold uppercase tracking-widest px-8 py-3 rounded transition-all duration-300 text-sm border-2;
+    border-color: hsl(var(--grove-green));
+    color: hsl(var(--grove-green));
+    background: transparent;
+  }
+
+  .btn-outline-green:hover {
+    background-color: hsl(var(--grove-green));
+    color: hsl(var(--asphalt));
+    box-shadow: 0 0 25px hsl(var(--grove-green) / 0.4);
+    transform: translateY(-2px);
+  }
+
+  .card-barber {
+    @apply rounded-xl overflow-hidden transition-all duration-500;
+    background-color: hsl(var(--surface));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .card-barber:hover {
+    border-color: hsl(var(--grove-green));
+    box-shadow: 0 0 30px hsl(var(--grove-green) / 0.2);
+    transform: translateY(-8px);
+  }
+
+  .respect-bar-fill {
+    background: linear-gradient(90deg, hsl(var(--grove-green)), hsl(var(--mission-gold)));
+    box-shadow: 0 0 10px hsl(var(--grove-green) / 0.6);
+  }
+}
+
