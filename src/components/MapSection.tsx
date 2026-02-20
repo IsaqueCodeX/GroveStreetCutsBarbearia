@@ -25,7 +25,7 @@ const MapSection = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-8 text-center md:text-left flex flex-col items-center md:items-start"
           >
             <h2 className="font-display text-4xl md:text-5xl text-white/90 tracking-wide uppercase leading-tight">
               A ESSÊNCIA DE LOS SANTOS
@@ -40,7 +40,7 @@ const MapSection = () => {
               </p>
             </div>
 
-            <div className="pt-4">
+            <div className="pt-4 w-full md:w-auto flex justify-center md:justify-start">
               <a
                 href="https://maps.google.com"
                 target="_blank"

@@ -135,20 +135,22 @@ const StyleCarousel = () => {
         <div className="relative">
           {/* Scroll Buttons */}
           <button
-            onClick={() => scroll("left")}
-            onMouseEnter={playHoverSound}
+            onClick={() => { scroll("left"); playHoverSound(); }}
             aria-label="Rolar para a esquerda"
-            className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border border-grove-green/40 bg-grove-surface/80 backdrop-blur flex items-center justify-center text-grove-green hover:border-grove-green hover:glow-green transition-all duration-300"
+            className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border border-grove-green/40 bg-grove-surface/80 backdrop-blur flex items-center justify-center text-grove-green hover:border-grove-green hover:glow-green active:scale-90 transition-all duration-300 group overflow-hidden"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-5 h-5 relative z-10" />
+            {/* Heartbeat Effect */}
+            <div className="absolute inset-0 rounded-full bg-grove-green/20 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-30" />
           </button>
           <button
-            onClick={() => scroll("right")}
-            onMouseEnter={playHoverSound}
+            onClick={() => { scroll("right"); playHoverSound(); }}
             aria-label="Rolar para a direita"
-            className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border border-grove-green/40 bg-grove-surface/80 backdrop-blur flex items-center justify-center text-grove-green hover:border-grove-green hover:glow-green transition-all duration-300"
+            className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border border-grove-green/40 bg-grove-surface/80 backdrop-blur flex items-center justify-center text-grove-green hover:border-grove-green hover:glow-green active:scale-90 transition-all duration-300 group overflow-hidden"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-5 h-5 relative z-10" />
+            {/* Heartbeat Effect */}
+            <div className="absolute inset-0 rounded-full bg-grove-green/20 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-30" />
           </button>
 
           {/* Scrollable Track */}

@@ -48,7 +48,7 @@ const ProductsSection = () => {
             initial={{ opacity: 0, x: 60 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-            className="py-12 md:py-0"
+            className="py-12 md:py-0 text-center md:text-left flex flex-col items-center md:items-start"
           >
             {/* Label */}
             <p className="font-body text-grove-green text-xs tracking-[0.4em] uppercase mb-4 font-semibold">
@@ -96,18 +96,18 @@ const ProductsSection = () => {
             </ul>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start w-full md:w-auto">
               <a href="#stash" onMouseEnter={playHoverSound} className="btn-gold flex items-center justify-center gap-2 text-sm">
                 <ShoppingBag className="w-4 h-4" />
                 VER PRODUTOS
               </a>
-              <a href="#booking" onMouseEnter={playHoverSound} className="btn-outline-green text-sm">
+              <a href="#booking" onMouseEnter={playHoverSound} className="btn-outline-green text-sm flex items-center justify-center">
                 AGENDAR CORTE
               </a>
             </div>
 
             {/* Badges */}
-            <div className="flex gap-6 mt-10 flex-wrap">
+            <div className="flex gap-6 mt-10 flex-wrap justify-center md:justify-start">
               {["Qualidade Premium", "Aprovado nas Ruas", "Sem Conservantes"].map((badge) => (
                 <div key={badge} className="flex items-center gap-2">
                   <div className="w-1 h-1 rounded-full bg-grove-gold" />
