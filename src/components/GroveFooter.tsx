@@ -5,14 +5,15 @@ import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 const GroveFooter = () => {
   const footerRef = React.useRef(null);
-  const isInView = useInView(footerRef, { amount: 0.1 }); // Removed once: true so it repeats
+  const missionRef = React.useRef(null);
+  const isMissionInView = useInView(missionRef, { amount: 0.5 }); // Only triggers when 50% of the mission section is visible
   const { playMissionPassed } = useSoundEffects();
 
   React.useEffect(() => {
-    if (isInView) {
+    if (isMissionInView) {
       playMissionPassed();
     }
-  }, [isInView, playMissionPassed]); // Plays every time it enters view
+  }, [isMissionInView, playMissionPassed]);
 
   return (
     <footer ref={footerRef} className="bg-black border-t border-grove-green/20 overflow-hidden relative">
@@ -113,12 +114,15 @@ const GroveFooter = () => {
           </div>
 
           {/* Mission Passed Column - Animated */}
-          <div className="flex flex-col items-center lg:col-span-1 text-center mt-8 md:mt-0">
+          <div
+            ref={missionRef}
+            className="flex flex-col items-center lg:col-span-1 text-center mt-8 md:mt-0"
+          >
 
             {/* Headers with Scale Animation */}
             <motion.h4
               initial={{ scale: 0, opacity: 0 }}
-              animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }} // Resets when out of view
+              animate={isMissionInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }} // Resets when out of view
               transition={{ type: "spring", bounce: 0.5, duration: 0.8 }}
               className="font-display text-grove-gold text-2xl tracking-widest uppercase mb-1 drop-shadow-md"
             >
@@ -126,7 +130,7 @@ const GroveFooter = () => {
             </motion.h4>
             <motion.p
               initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }} // Resets when out of view
+              animate={isMissionInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }} // Resets when out of view
               transition={{ delay: 0.8, duration: 0.5 }}
               className="font-display text-white text-lg tracking-widest uppercase mb-4 drop-shadow-sm"
             >

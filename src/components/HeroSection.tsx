@@ -61,10 +61,9 @@ const HeroSection = () => {
             textShadow: "0 0 60px rgba(52, 168, 83, 0.15)",
           }}
         >
-          <span className="font-display text-4xl md:text-7xl block mb-2">BEM-VINDO A </span>
+          <span className="font-display text-4xl md:text-7xl block mb-2 gta-outline">BEM-VINDO A </span>
           <span
-            className="font-accent text-grove-green text-[3.5rem] leading-[0.9] md:text-8xl lg:text-9xl block mt-2"
-            style={{ textShadow: "0 0 40px hsl(137 60% 44% / 0.6)" }}
+            className="font-accent text-grove-green text-[3.5rem] leading-[0.9] md:text-8xl lg:text-9xl block mt-2 gta-outline"
           >
             LOS SANTOS.
           </span>
