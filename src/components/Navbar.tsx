@@ -37,7 +37,11 @@ const Navbar = () => {
         <a href="#" className="flex items-baseline leading-none group active:scale-95 transition-transform shrink-0">
           <span
             className="text-[#34A853] text-2xl md:text-4xl tracking-widest gta-outline"
-            style={{ fontFamily: "'Pricedown', sans-serif" }}
+            style={{
+              fontFamily: "'Pricedown', 'Bungee', 'Impact', sans-serif",
+              WebkitTextStroke: '1px #000',
+              paintOrder: 'stroke fill'
+            }}
           >
             GROVE STREET
           </span>
